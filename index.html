@@ -1,0 +1,99 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta property="og:title" content="">
+  <meta property="og:type" content="">
+  <meta property="og:url" content="">
+  <meta property="og:image" content="">
+
+  <link rel="manifest" href="../site.webmanifest">
+  <link rel="apple-touch-icon" href="../icon.png">
+  <!-- Place favicon.ico in the root directory -->
+
+  <meta name="theme-color" content="#fafafa">
+</head>
+
+<body>
+
+  <!-- Add your site or application content here -->
+  <img style="width: 300px;" src="../page_logo_assets.png">
+  <h1>Today's KitchenChatter</h1>
+  <div>
+    <h3> Below is an easy step-by-step recipe for creating a Python script to sign up on Target.com </h3>
+      <h4>Please note that websites can change over time, so this recipe might need adjustments based on the current structure of doordash.com website.</h4>
+
+        <ol>
+          <li>Install Selenium</li>
+            Make sure you have Seleniun installed. You cna install in using:
+              <h6>bash</h6>
+                <pre>
+                  <code>pip install selenium</code>
+                </pre>
+          <li>Download a WebDriver</li>
+      <h5>You need to download a web driver that corresponds to the browser you want to automate.For this recipe
+      ,let's use the Chrome WebDriver.Download it from <a href="https://sites.google.com/chromium.org/driver/"></a>
+        and make sure to place the executable in a directory that is in your system's PATH.</h5>
+          <li>Write the Python Script</li>
+              <h5>Create a Python script(e.g., 'signup_target.py') with the following content: python</h5>
+                <h6>python</h6>
+            <pre>
+              <code>
+                  from selenium import webdriver
+                  from selenium.webdriver.common.keys import Keys
+                  import time
+
+                  # Set up the WebDriver
+                  driver = webdriver.Chrome()
+
+                  # Step 2: Open target.com
+                  driver.get("https://www.target.com/")
+
+                 # Step 3: Locate the sign-up button and click on it
+                 sign_up_button = driver.find_element_by_xpath("//a[@data-test='accountNav-signIn']")
+                 sign_up_button.click()
+
+                 # Wait for the sign-up page to load
+                 time.sleep(2)
+
+                 # Step 4: Fill in the registration form
+                 email_input = driver.find_element_by_name("username")
+                 password_input = driver.find_element_by_name("password")
+
+                 # Replace 'your_email' and 'your_password' with the desired values
+                 email_input.send_keys("your_email")
+                 password_input.send_keys("your_password")
+
+                 # Step 5: Submit the form
+                 password_input.send_keys(Keys.RETURN)
+
+                 # Wait for the registration to complete (you may need to adjust the time based on the website's response time)
+                 time.sleep(5)
+
+                 # Step 6: Close the browser
+                 driver.quit()
+        </code>
+            </pre>
+          <li>Run the Script</li>
+            <h5>Execute the script by running:</h5>
+              <h6>bash</h6>
+          <pre><code>python signup_target.py</code></pre>
+        </ol>
+    <br>
+    <p>Make sure you replace '"your_email"' and '"your_password"'
+      with the actual email and password you want to use for the sign-up.</p>
+  </div>
+
+
+
+
+
+
+</body>
+
+</html>
